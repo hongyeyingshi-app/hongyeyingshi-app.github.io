@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>红叶影视｜片库索引、热播榜单与观影攻略 - hongyeyingshi-app.github.io</title>
+<meta name="description" content="红叶影视（https://hongyeyingshi-app.github.io）是一份自己整理的观影索引：按类型梳理的片库片单、每周更新的关注度榜单、清晰度与字幕投屏的实用设置笔记，以及编辑写下的短评手记。片子太多、挑片太累的时候，可以在这里先筛一遍。">
+<meta name="keywords" content="红叶影视,红叶影视官网,hongyeyingshi-app,影视片库索引,高分电影片单,剧集关注度榜单,观影设置攻略,字幕与投屏教程,影评短评手记,类型电影推荐">
+<meta name="author" content="红叶影视">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#141110">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://hongyeyingshi-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="红叶影视">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="红叶影视｜片库索引、热播榜单与观影攻略">
+<meta property="og:description" content="按类型梳理的片库片单、每周更新的关注度榜单、清晰度与字幕投屏的实用设置笔记，以及编辑写下的短评手记。">
+<meta property="og:url" content="https://hongyeyingshi-app.github.io/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="红叶影视｜片库索引、热播榜单与观影攻略">
+<meta name="twitter:description" content="一份自己整理的观影索引，帮你把挑片的时间省下来。">
+<style>
+:root{
+  --ink:#141110;
+  --ink-2:#1c1715;
+  --ink-3:#251f1b;
+  --line:#3b322b;
+  --paper:#f4ece3;
+  --dim:#a39488;
+  --red:#c8442f;
+  --red-soft:#e0684c;
+  --amber:#dfa23c;
+  --leaf:#8f6b3e;
+  --max:1160px;
+  --serif:"Songti SC","STSong","Noto Serif SC",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--paper);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  letter-spacing:.2px;
+}
+img,svg{max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;letter-spacing:1px;margin:0}
+p{margin:0 0 1em}
+ul,ol{margin:0;padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 22px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--red);color:#fff;padding:10px 16px;z-index:99}
+.skip:focus{left:12px;top:12px}
+
+/* ---------- 顶栏 ---------- */
+.nav-switch{position:absolute;opacity:0;pointer-events:none}
+.masthead{
+  position:sticky;top:0;z-index:60;
+  background:rgba(20,17,16,.94);
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.brand{display:flex;flex-direction:column;line-height:1.25}
+.brand b{font-family:var(--serif);font-size:22px;letter-spacing:3px}
+.brand b i{font-style:normal;color:var(--red)}
+.brand small{font-size:11.5px;color:var(--dim);letter-spacing:.6px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.menu{display:flex;flex-wrap:wrap;gap:4px}
+.menu a{
+  display:block;padding:8px 13px;border-radius:999px;font-size:14.5px;color:var(--dim);
+  border:1px solid transparent;transition:.22s ease;
+}
+.menu a:hover,.menu a:focus{color:var(--paper);background:var(--ink-3);border-color:var(--line)}
+.menu a.on{color:#fff;background:var(--red);border-color:var(--red)}
+.burger{display:none;width:42px;height:38px;border:1px solid var(--line);border-radius:10px;cursor:pointer;position:relative;background:var(--ink-2)}
+.burger span{position:absolute;left:11px;right:11px;height:1.6px;background:var(--paper);display:block}
+.burger span:nth-child(1){top:13px}
+.burger span:nth-child(2){top:18.5px}
+.burger span:nth-child(3){top:24px}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 460px at 88% -8%,rgba(200,68,47,.22),transparent 62%),
+    radial-gradient(700px 420px at 8% 108%,rgba(143,107,62,.20),transparent 65%),
+    var(--ink);
+}
+.hero:before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:56px 56px;pointer-events:none;
+}
+.hero-in{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center;padding:78px 0 66px}
+.tagline{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;color:var(--amber);letter-spacing:2px;border:1px solid rgba(223,162,60,.35);border-radius:999px;padding:5px 14px;background:rgba(223,162,60,.07)}
+.hero h1{font-size:clamp(38px,6.4vw,66px);line-height:1.16;margin:22px 0 18px}
+.hero h1 em{font-style:normal;color:var(--red);position:relative;white-space:nowrap}
+.hero h1 em:after{content:"";position:absolute;left:0;right:0;bottom:6px;height:9px;background:rgba(200,68,47,.28);z-index:-1}
+.lead{color:var(--dim);font-size:17px;max-width:52ch}
+.lead strong{color:var(--paper);font-weight:600}
+.btnrow{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 26px}
+.btn{
+  display:inline-block;padding:12px 26px;border-radius:999px;font-size:15px;border:1px solid var(--line);
+  background:var(--ink-3);transition:.22s ease;
+}
+.btn:hover{transform:translateY(-2px);border-color:#5a4c40}
+.btn-hot{background:var(--red);border-color:var(--red);color:#fff}
+.btn-hot:hover{background:var(--red-soft)}
+.urlchip{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--dim);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  border-left:2px solid var(--red);padding-left:11px;word-break:break-all;
+}
+
+/* 海报堆 */
+.stack{position:relative;height:340px}
+.stack div{
+  position:absolute;border-radius:12px;border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 18px 40px rgba(0,0,0,.5);padding:16px 14px;display:flex;flex-direction:column;justify-content:flex-end;
+  transition:.3s ease;
+}
+.stack div span{font-family:var(--serif);font-size:15px;letter-spacing:2px}
+.stack div small{display:block;font-size:11px;color:rgba(255,255,255,.62);margin-top:5px;letter-spacing:.5px}
+.p1{left:2%;top:8%;width:44%;height:80%;background:linear-gradient(160deg,#7a2a1f,#c8442f 58%,#2a1512);transform:rotate(-5deg)}
+.p2{right:4%;top:0;width:40%;height:66%;background:linear-gradient(165deg,#40342a,#8f6b3e 60%,#1d1714);transform:rotate(6deg)}
+.p3{right:16%;bottom:2%;width:38%;height:52%;background:linear-gradient(150deg,#2c3b45,#5c7d8a 62%,#161c20);transform:rotate(-2deg)}
+.stack:hover .p1{transform:rotate(-8deg) translateY(-6px)}
+.stack:hover .p2{transform:rotate(9deg) translateY(-6px)}
+.stack:hover .p3{transform:rotate(-4deg) translateY(-6px)}
+
+/* ---------- 数据条 ---------- */
+.facts{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink-2)}
+.facts ul{display:grid;grid-template-columns:repeat(4,1fr)}
+.facts li{padding:22px 12px;border-left:1px solid var(--line);text-align:center}
+.facts li:first-child{border-left:0}
+.facts b{display:block;font-family:var(--serif);font-size:26px;color:var(--amber)}
+.facts span{font-size:12.5px;color:var(--dim)}
+
+/* ---------- 章节通用 ---------- */
+section{padding:74px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.sec-head .no{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:12px;color:var(--red);letter-spacing:3px;display:block;margin-bottom:10px;
+}
+.sec-head h2{font-size:clamp(26px,3.6vw,36px)}
+.sec-head p{color:var(--dim);font-size:14.5px;margin:8px 0 0;max-width:56ch}
+.alt{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.alt2{background:linear-gradient(180deg,var(--ink),#191413)}
+
+/* ---------- 片库 ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:20px}
+.card{
+  background:var(--ink-3);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  display:flex;flex-direction:column;transition:.26s ease;
+}
+.card:hover{transform:translateY(-5px);border-color:#57493d;box-shadow:0 16px 34px rgba(0,0,0,.45)}
+.thumb{height:132px;position:relative;display:flex;align-items:center;justify-content:center}
+.thumb i{position:absolute;left:14px;top:14px;font-size:11px;font-style:normal;letter-spacing:1px;background:rgba(0,0,0,.42);padding:3px 9px;border-radius:999px;color:#fff}
+.thumb b{font-family:var(--serif);font-size:26px;letter-spacing:6px;color:rgba(255,255,255,.9);text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.t1{background:linear-gradient(135deg,#6d2318,#b93c2a 70%,#2b1411)}
+.t2{background:linear-gradient(135deg,#2f3c46,#5f808d 70%,#161b1f)}
+.t3{background:linear-gradient(135deg,#4a3a22,#94713f 70%,#221a12)}
+.t4{background:linear-gradient(135deg,#3d2440,#6c4472 70%,#1c111d)}
+.t5{background:linear-gradient(135deg,#1f3a2c,#41755a 70%,#101c16)}
+.t6{background:linear-gradient(135deg,#5c2b39,#a4506a 70%,#1f1015)}
+.card .body{padding:18px 18px 20px;flex:1;display:flex;flex-direction:column}
+.card h3{font-size:18px;margin-bottom:8px}
+.card p{font-size:14px;color:var(--dim);margin-bottom:14px;flex:1}
+.meta{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#8b7d72;border-top:1px dashed var(--line);padding-top:12px}
+.meta a{color:var(--red-soft)}
+.meta a:hover{text-decoration:underline}
+
+/* ---------- 榜单 ---------- */
+.rank{display:grid;grid-template-columns:1fr 1fr;gap:14px 34px}
+.rank li{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px dashed var(--line)}
+.rank .n{font-family:var(--serif);font-size:30px;color:var(--red);line-height:1;width:46px;text-align:center;flex:none}
+.rank li:nth-child(1) .n,.rank li:nth-child(2) .n,.rank li:nth-child(3) .n{color:var(--amber)}
+.rank .txt h3{font-size:16.5px;margin-bottom:4px}
+.rank .txt p{font-size:13.5px;color:var(--dim);margin:0}
+.rank .up{font-size:11.5px;color:#6f9c7a;margin-left:8px}
+.rank .down{font-size:11.5px;color:#b06a5e;margin-left:8px}
+
+/* ---------- 攻略 ---------- */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;counter-reset:s}
+.step{position:relative;background:var(--ink-3);border:1px solid var(--line);border-radius:14px;padding:26px 20px 22px}
+.step:before{
+  counter-increment:s;content:counter(s,decimal-leading-zero);
+  position:absolute;right:18px;top:14px;font-family:var(--serif);font-size:30px;color:rgba(255,255,255,.08);
+}
+.step h3{font-size:17px;margin-bottom:10px}
+.step p{font-size:14px;color:var(--dim);margin-bottom:12px}
+.step ul li{font-size:13.5px;color:#9b8d82;padding-left:16px;position:relative;margin-bottom:6px}
+.step ul li:before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--red)}
+.tip{margin-top:26px;border-left:3px solid var(--amber);background:rgba(223,162,60,.08);padding:16px 18px;border-radius:0 12px 12px 0;font-size:14.5px;color:#e2d4c3}
+.tip b{color:var(--amber)}
+
+/* ---------- 影评手记 ---------- */
+.notes{display:grid;grid-template-columns:1.35fr .65fr;gap:26px;align-items:start}
+.note{background:var(--ink-3);border:1px solid var(--line);border-radius:16px;padding:26px 24px}
+.note blockquote{margin:0;font-family:var(--serif);font-size:17.5px;line-height:1.9;color:#efe5da}
+.note blockquote:before{content:"「";color:var(--red);margin-right:2px}
+.note blockquote:after{content:"」";color:var(--red);margin-left:2px}
+.note .by{margin-top:16px;font-size:13px;color:var(--dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.side{display:flex;flex-direction:column;gap:14px}
+.side div{background:var(--ink-2);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:0 12px 12px 0;padding:18px}
+.side h4{font-size:15.5px;margin-bottom:8px}
+.side p{font-size:13.5px;color:var(--dim);margin:0}
+.side .k{font-size:11.5px;color:var(--amber);letter-spacing:1.5px;display:block;margin-bottom:6px}
+
+/* ---------- 关于 ---------- */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.about p{color:var(--dim);font-size:15px}
+.about p b{color:var(--paper);font-weight:600}
+.panel{background:var(--ink-3);border:1px solid var(--line);border-radius:16px;padding:26px}
+.panel h3{font-size:19px;margin-bottom:12px}
+.panel dl{margin:0;font-size:14px}
+.panel dt{color:#8b7d72;font-size:12.5px;margin-top:14px;letter-spacing:1px}
+.panel dd{margin:4px 0 0;word-break:break-all}
+.panel dd a{color:var(--amber);border-bottom:1px dotted rgba(223,162,60,.5)}
+.panel dd a:hover{color:#fff}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.badges span{font-size:12px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+
+/* ---------- 页脚 ---------- */
+.foot{background:#100d0c;border-top:1px solid var(--line);padding:52px 0 34px;font-size:13.5px;color:#8b7d72}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+.foot h4{font-size:15px;color:var(--paper);margin-bottom:14px}
+.foot li{margin-bottom:9px}
+.foot li a:hover{color:var(--amber)}
+.foot .logo{font-family:var(--serif);font-size:20px;letter-spacing:3px;color:var(--paper);margin-bottom:12px;display:block}
+.foot .addr{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;word-break:break-all;color:var(--red-soft)}
+.rule{border-top:1px solid var(--line);margin-top:34px;padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:960px){
+  .hero-in{grid-template-columns:1fr;gap:30px;padding:56px 0 44px}
+  .stack{height:260px;order:-1}
+  .notes,.about,.foot-grid{grid-template-columns:1fr}
+  .rank{grid-template-columns:1fr}
+  .facts ul{grid-template-columns:repeat(2,1fr)}
+  .facts li:nth-child(3){border-left:0}
+  .facts li:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:760px){
+  .burger{display:block}
+  .menu{
+    display:none;width:100%;flex-direction:column;gap:2px;
+    border-top:1px solid var(--line);margin-top:12px;padding-top:12px;
+  }
+  .nav-switch:checked ~ .masthead .menu{display:flex}
+  .bar{flex-wrap:wrap}
+  .menu a{padding:11px 12px;border-radius:10px}
+  section{padding:52px 0}
+  .wrap{padding:0 18px}
+  .note{padding:22px 18px}
+  .note blockquote{font-size:16px}
+  .hero h1{font-size:36px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<a class="skip" href="#main">跳到主要内容</a>
+
+<input class="nav-switch" id="nav-switch" type="checkbox" aria-label="展开或收起导航菜单">
+
+<header class="masthead">
+  <div class="wrap bar">
+    <a class="brand" href="#">
+      <b>红<i>叶</i>影视</b>
+      <small>hongyeyingshi-app.github.io</small>
+    </a>
+    <label class="burger" for="nav-switch"><span></span><span></span><span></span></label>
+    <nav class="menu" aria-label="站点导航">
+      <a class="on" href="#">首页</a>
+      <a href="#library">片库片单</a>
+      <a href="#ranking">热度榜单</a>
+      <a href="#guide">观影设置</a>
+      <a href="#notes">短评手记</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <span class="tagline">类型片单 · 热度榜单 · 观影笔记</span>
+        <h1>红叶影视<br>先把片子<em>筛一遍</em>，<br>再把时间留给观看</h1>
+        <p class="lead">做这个站的起因很简单：平台越来越多，能看的东西却越来越难挑。<strong>红叶影视</strong>不做资源搬运，只做索引——把值得看的类型片单、每周的检索热度、清晰度与字幕的实用设置整理到一起，翻两屏就能决定今晚看什么。</p>
+        <div class="btnrow">
+          <a class="btn btn-hot" href="#library">按类型找片</a>
+          <a class="btn" href="#ranking">看本周榜单</a>
+        </div>
+        <span class="urlchip">本站地址：https://hongyeyingshi-app.github.io</span>
+      </div>
+      <div class="stack" aria-hidden="true">
+        <div class="p1"><span>公路与秋风</span><small>4 部 · 剧情</small></div>
+        <div class="p2"><span>城市纪实</span><small>6 部 · 纪录</small></div>
+        <div class="p3"><span>雨夜推理</span><small>5 部 · 悬疑</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="wrap">
+      <ul>
+        <li><b>26</b><span>已梳理的类型标签</span></li>
+        <li><b>140+</b><span>在更片单条目</span></li>
+        <li><b>每周四</b><span>榜单更新节奏</span></li>
+        <li><b>900+</b><span>编辑短评累计</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="library">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="no">SECTION 01 / 片库片单</span>
+          <h2>按类型翻，比按片名猜更快</h2>
+          <p>每个片单都标注了适合的观看场景：适合一个人安静看，还是适合周末一口气刷完，这里都写了。</p>
+        </div>
+        <a class="btn" href="#">查看全部片单</a>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="thumb t1"><i>剧情</i><b>秋日公路</b></div>
+          <div class="body">
+            <h3>公路片：把车窗外的风景看够</h3>
+            <p>四部节奏偏慢的公路作品，适合周末下午，配一杯不凉不热的茶。</p>
+            <div class="meta"><span>更新至 第 4 部</span><a href="#">进入片单</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb t2"><i>悬疑</i><b>雨夜推理</b></div>
+          <div class="body">
+            <h3>雨夜推理：五部不靠吓人的悬疑</h3>
+            <p>侧重线索铺陈而非惊吓，看完记得回头看第二遍开头。</p>
+            <div class="meta"><span>更新至 第 5 部</span><a href="#">进入片单</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb t3"><i>纪录</i><b>城市纪实</b></div>
+          <div class="body">
+            <h3>城市纪实：六部关于街巷的影像</h3>
+            <p>拍的都是普通人的一天，镜头克制，适合碎片时间慢慢看。</p>
+            <div class="meta"><span>更新至 第 6 部</span><a href="#">进入片单</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb t4"><i>动画</i><b>手绘世界</b></div>
+          <div class="body">
+            <h3>手绘动画：给大人也留了一把椅子</h3>
+            <p>非热血向，画风重于剧情，收藏向片单，长期增补。</p>
+            <div class="meta"><span>更新至 第 8 部</span><a href="#">进入片单</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb t5"><i>剧集</i><b>长夜剧集</b></div>
+          <div class="body">
+            <h3>长夜剧集：适合连续雨天的一部</h3>
+            <p>单集时长偏长的系列，标注了倍速建议与补集提示。</p>
+            <div class="meta"><span>更新至 第 3 季</span><a href="#">进入片单</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb t6"><i>短片</i><b>短片合集</b></div>
+          <div class="body">
+            <h3>二十分钟的短片合集</h3>
+            <p>通勤路上就能看完，每部附一句话说明，不多写。</p>
+            <div class="meta"><span>更新至 第 12 部</span><a href="#">进入片单</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="ranking" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="no">SECTION 02 / 热度榜单</span>
+          <h2>本周站内检索热度</h2>
+          <p>统计口径为站内检索与片单点击次数，每周四更新一次，仅反映本站读者的兴趣走向，不代表任何平台播放量。</p>
+        </div>
+        <a class="btn" href="#">历史榜单归档</a>
+      </div>
+      <ol class="rank">
+        <li><span class="n">01</span><div class="txt"><h3>悬疑推理<span class="up">↑ 2 位</span></h3><p>线索清晰、不需要二刷就能看懂的作品更受欢迎。</p></div></li>
+        <li><span class="n">02</span><div class="txt"><h3>都市剧情<span class="up">↑ 1 位</span></h3><p>通勤题材的短篇剧集点击量明显高于长篇。</p></div></li>
+        <li><span class="n">03</span><div class="txt"><h3>自然纪录<span class="up">↑ 4 位</span></h3><p>秋季风光类片单在换季时检索量通常上涨。</p></div></li>
+        <li><span class="n">04</span><div class="txt"><h3>公路电影<span class="down">↓ 1 位</span></h3><p>长假结束后热度回落，属正常波动。</p></div></li>
+        <li><span class="n">05</span><div class="txt"><h3>手绘动画<span class="up">↑ 3 位</span></h3><p>家长与成人观众重合度较高，收藏量稳定。</p></div></li>
+        <li><span class="n">06</span><div class="txt"><h3>科幻短篇<span class="down">↓ 2 位</span></h3><p>新片供给偏少，榜单位置略有下滑。</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="guide" class="alt2">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="no">SECTION 03 / 观影设置</span>
+          <h2>四个步骤，把画质和字幕理顺</h2>
+          <p>这些都是自己踩过的坑，写下来省得每次重新试。不同设备菜单名称会有出入，思路是一致的。</p>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>先定清晰度</h3>
+          <p>别一上来就拉满，带宽不够反而会卡成幻灯片。</p>
+          <ul>
+            <li>家庭宽带优先 1080P</li>
+            <li>移动网络先试 720P</li>
+            <li>大屏投屏再考虑 4K</li>
+          </ul>
+        </div>
+        <div class="step">
+          <h3>再对字幕</h3>
+          <p>字幕错位比画质差更影响观感，先解决它。</p>
+          <ul>
+            <li>优先选内嵌字幕版本</li>
+            <li>外挂字幕注意时间轴偏移</li>
+            <li>繁简转换别忘关</li>
+          </ul>
+        </div>
+        <div class="step">
+          <h3>投屏与外接</h3>
+          <p>投屏失败大多不是片源问题，是同一网络没对齐。</p>
+          <ul>
+            <li>两端连同一个 Wi-Fi</li>
+            <li>关闭路由器的 AP 隔离</li>
+            <li>老电视优先用有线投屏器</li>
+          </ul>
+        </div>
+        <div class="step">
+          <h3>声音与倍速</h3>
+          <p>对白听不清时，比调大音量更有效的办法是压动态。</p>
+          <ul>
+            <li>开启夜间模式或人声增强</li>
+            <li>对白密集场景用 1.0 倍速</li>
+            <li>纪录类可提到 1.25 倍速</li>
+          </ul>
+        </div>
+      </div>
+      <p class="tip"><b>提醒：</b>红叶影视只做片单与设置笔记，不存放、不上传任何影音文件；观看请使用已获得授权的正规渠道。</p>
+    </div>
+  </section>
+
+  <section id="notes">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="no">SECTION 04 / 短评手记</span>
+          <h2>看完之后，写两句就够</h2>
+          <p>不打分、不列星级，只记下当时真实的感受，方便以后回看时想起为什么喜欢。</p>
+        </div>
+        <a class="btn" href="#">投稿给编辑</a>
+      </div>
+      <div class="notes">
+        <div class="note">
+          <blockquote>有些片子第一次看觉得慢，隔几年再看才发现，慢的不是节奏，是自己当时太急。重看带来的东西往往比新片更多。</blockquote>
+          <div class="by"><span>—— 编辑 老周 · 10 月 18 日</span><span>#重看计划</span></div>
+        </div>
+        <div class="side">
+          <div>
+            <span class="k">本周主题</span>
+            <h4>一个人也能看的电影</h4>
+            <p>不需要有人陪、也不需要在意别人反应的六部，评论区继续补充。</p>
+          </div>
+          <div>
+            <span class="k">下期预告</span>
+            <h4>秋季风景片单</h4>
+            <p>换季时最想看的一类，正在整理，预计下周四放进片库。</p>
+          </div>
+          <div>
+            <span class="k">写在旁边</span>
+            <h4>短评怎么写</h4>
+            <p>一句话说明场景，一句话说明感受，超过三百字反而没人看。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="no">SECTION 05 / 关于本站</span>
+          <h2>关于红叶影视</h2>
+        </div>
+      </div>
+      <div class="about">
+        <div>
+          <p><b>红叶影视</b>是一个个人维护的观影索引站，从最早的一份手写片单慢慢扩到现在这几个栏目。名字取自第一次整理片单的那个秋天，窗外的叶子正红，没有别的讲究。</p>
+          <p>站点不提供下载，也不做资源聚合，只做三件事：<b>整理片单</b>、<b>记录热度</b>、<b>写下实用的设置笔记</b>。如果你也觉得挑片比看片更累，大概会在这里找到点有用的东西。</p>
+          <p>发现片单里的信息有出入，或者想推荐一部被漏掉的作品，都可以按页面下方的方式留言，看到了就会补上。</p>
+          <div class="badges">
+            <span>片库片单</span><span>热度榜单</span><span>观影设置</span><span>短评手记</span><span>个人维护</span><span>每周更新</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>站点信息</h3>
+          <dl>
+            <dt>网站名称</dt>
+            <dd>红叶影视</dd>
+            <dt>网站网址</dt>
+            <dd><a href="#">https://hongyeyingshi-app.github.io</a></dd>
+            <dt>主机域名</dt>
+            <dd>hongyeyingshi-app.github.io</dd>
+            <dt>主要栏目</dt>
+            <dd>片库片单 · 热度榜单 · 观影设置 · 短评手记</dd>
+            <dt>更新频率</dt>
+            <dd>片单不定期增补，榜单每周四更新</dd>
+            <dt>内容性质</dt>
+            <dd>观影索引与笔记，不含任何影音文件</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="logo">红叶影视</span>
+        <p>一份自己整理的观影索引：片库片单、每周热度、观影设置与短评手记。挑片这件事，能省一点是一点。</p>
+        <p class="addr">https://hongyeyingshi-app.github.io</p>
+      </div>
+      <div>
+        <h4>栏目导航</h4>
+        <ul>
+          <li><a href="#library">片库片单</a></li>
+          <li><a href="#ranking">热度榜单</a></li>
+          <li><a href="#guide">观影设置</a></li>
+          <li><a href="#notes">短评手记</a></li>
+          <li><a href="#about">关于本站</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>其他</h4>
+        <ul>
+          <li><a href="#">片单投稿</a></li>
+          <li><a href="#">纠错与反馈</a></li>
+          <li><a href="#">更新日志</a></li>
+          <li><a href="#">友情链接</a></li>
+          <li><a href="#">版权说明</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rule">
+      <span>© 2026 红叶影视 hongyeyingshi-app.github.io · 保留所有权利</span>
+      <span>本站仅提供影视信息索引，观看请通过已获授权的平台</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "红叶影视",
+  "alternateName": "hongyeyingshi-app",
+  "url": "https://hongyeyingshi-app.github.io/",
+  "inLanguage": "zh-CN",
+  "description": "红叶影视是一份个人整理的观影索引，包含类型片库片单、每周检索热度榜单、清晰度与字幕投屏的观影设置笔记，以及编辑短评手记。",
+  "publisher": {
+    "@type": "Organization",
+    "name": "红叶影视",
+    "url": "https://hongyeyingshi-app.github.io/"
+  }
+}
+</script>
+
+</body>
+</html>
